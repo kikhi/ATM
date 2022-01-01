@@ -1,0 +1,15 @@
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\Cajero.csproj.AssemblyReference.cache
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\Cajero.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\Cajero.AssemblyInfoInputs.cache
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\Cajero.AssemblyInfo.cs
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\Cajero.csproj.CoreCompileInputs.cache
+C:\Users\catg_\Desktop\New folder\Cajero\bin\Debug\net6.0\Cajero.exe
+C:\Users\catg_\Desktop\New folder\Cajero\bin\Debug\net6.0\Cajero.deps.json
+C:\Users\catg_\Desktop\New folder\Cajero\bin\Debug\net6.0\Cajero.runtimeconfig.json
+C:\Users\catg_\Desktop\New folder\Cajero\bin\Debug\net6.0\Cajero.dll
+C:\Users\catg_\Desktop\New folder\Cajero\bin\Debug\net6.0\ref\Cajero.dll
+C:\Users\catg_\Desktop\New folder\Cajero\bin\Debug\net6.0\Cajero.pdb
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\Cajero.dll
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\ref\Cajero.dll
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\Cajero.pdb
+C:\Users\catg_\Desktop\New folder\Cajero\obj\Debug\net6.0\Cajero.genruntimeconfig.cache
