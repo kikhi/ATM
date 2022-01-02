@@ -50,11 +50,10 @@ namespace Cajero
 
         switch(menu)
         {
-        case 1:
+          case 1:
             Console.WriteLine("Ingresa el monto a depositar");
             deposito = Convert.ToInt32(Console.ReadLine());
-            //xrp = deposito + xrp;
-            break;
+              break;
         }
       }
 
@@ -75,12 +74,4 @@ namespace Cajero
       }
     }
 
-
-    class Dinero
-    {
-      int dolares;
-      int xrp;
-      int etherium;
-      int bitcoin;
-    }
 }
