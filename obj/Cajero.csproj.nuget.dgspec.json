@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\catg_\\Desktop\\New folder\\Cajero\\Cajero.csproj": {}
+    "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\Cajero.csproj": {}
   },
   "projects": {
-    "C:\\Users\\catg_\\Desktop\\New folder\\Cajero\\Cajero.csproj": {
+    "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\Cajero.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\catg_\\Desktop\\New folder\\Cajero\\Cajero.csproj",
+        "projectUniqueName": "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\Cajero.csproj",
         "projectName": "Cajero",
-        "projectPath": "C:\\Users\\catg_\\Desktop\\New folder\\Cajero\\Cajero.csproj",
+        "projectPath": "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\Cajero.csproj",
         "packagesPath": "C:\\Users\\catg_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\catg_\\Desktop\\New folder\\Cajero\\obj\\",
+        "outputPath": "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\catg_\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

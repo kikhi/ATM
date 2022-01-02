@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
 
+
 namespace Cajero
 {
     public class Program
@@ -69,7 +70,8 @@ namespace Cajero
 
       static void conexionDB()
       {
-      SqlConnection connectionDB = new SqlConnection("SERVER=CLIENTE\SQLEXPRESS; DATABASE=criptos; integrated security=true");
+        SqlConnection connectionDB = new SqlConnection("SERVER=CLIENTE; DATABASE=criptos; integrated security=true");
+        connectionDB.Open();
       }
     }
 
