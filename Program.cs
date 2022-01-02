@@ -39,7 +39,6 @@ namespace Cajero
       {
         int menu;
         int deposito;
-        Dinero xrp = new Dinero();
 
         Console.Clear();
         Console.WriteLine("Que moneda deseas depositar");
