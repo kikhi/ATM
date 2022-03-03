@@ -34,16 +34,28 @@ INSERT INTO cajero (id_cajero, sucursal)
 VALUES ('001', 'Zona Rio');
 
 -- Insert client and id wallet
-INSERT INTO cliente (id_cliente, nip, nombre, apellido_paterno, apellido_materno)
-VALUES ('0001', '1234', 'Cesar', 'Trujillo', 'Garay');
+-- Crear primero la billetera
+INSERT INTO cliente (id_cliente, id_billetera, nip, nombre, apellido_paterno, apellido_materno)
+VALUES ('0001', '001', '1234', 'Cesar', 'Trujillo', 'Garay');
 
-INSERT INTO billetera (id_billetera)
-VALUES ('00001');
+INSERT INTO billetera (id_billetera, bitcoin, etherium, tusd, xrp)
+VALUES ('001', '0', '0', '0', '0')
+
+INSERT INTO cliente (id_cliente, id_billetera, nip, nombre, apellido_paterno, apellido_materno)
+VALUES ('0002', '002','1234', 'Luis', 'Silva', 'Reyes');
+
+INSERT INTO billetera (id_billetera, bitcoin, etherium, tusd, xrp)
+VALUES ('002', '0', '0', '0', '0')
+
+DELETE FROM cliente WHERE id_cliente = '002';
+DELETE FROM billetera WHERE id_billetera = '002';
+
 
 /*    ==== From ATM ====    */
 -- Insert money in wallet (First time)
-UPDATE billetera
-SET xrp = '1'
-WHERE id_billetera = '00001';
+ UPDATE billetera SET xrp = xrp + 5 WHERE id_billetera = '001';
+ UPDATE billetera SET xrp = xrp + 5 WHERE id_billetera = '002';
+ SELECT * FROM billetera WHERE id_billetera = '002';
 
 SELECT * FROM billetera
+SELECT * FROM cliente
