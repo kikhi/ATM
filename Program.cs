@@ -13,8 +13,8 @@ namespace Cajero
             int? numCliente;
 
             Console.Write("Insert ID from receptor: ");
-            numCliente = Console.ReadLine();
-            
+            numCliente = Convert.ToInt32(Console.ReadLine());
+
             /*    ==== Menu ====    */
             Console.WriteLine("Criptos ATM\n");
             Console.WriteLine("1.- Depositar");
