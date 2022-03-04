@@ -10,29 +10,33 @@ namespace Cajero
     {
         public static void Main(string[] args)
         {
-            int? numCliente;
+            int idClient;
 
             Console.Write("Insert ID from receptor: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
+            idClient = Convert.ToInt32(Console.ReadLine());
 
             /*    ==== Menu ====    */
             Console.WriteLine("Criptos ATM\n");
             Console.WriteLine("1.- Depositar");
             Console.WriteLine("2.- Withdraw");
             Console.WriteLine("3.- Transfer");
+            Console.WriteLine("4.- Salir");
 
             int menu = Convert.ToInt32(Console.ReadLine());
 
             switch (menu)
             {
                 case 1:
-                    Depositar();
+                    Depositar(idClient);
                     break;
                 case 2:
-                    Whithdraw();
+                    Whithdraw(idClient);
                     break;
                 case 3:
-                    Transfer();
+                    Transfer(idClient);
+                    break;
+                case 4:
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Opcion no valida");
@@ -41,7 +45,7 @@ namespace Cajero
             Console.ReadKey();
         }
 
-        static void Depositar()
+        static void Depositar(int idClient)
         {
             SqlConnection connectionDB = new SqlConnection("SERVER=CLIENTE\\SQLEXPRESS; DATABASE=criptos; integrated security=true");
             SqlCommand comand = new SqlCommand();
@@ -64,7 +68,7 @@ namespace Cajero
                     Console.Write("Insert xrp mount: ");
                     xrpTxt = Console.ReadLine();
 
-                    query = "UPDATE billetera SET xrp = xrp + '" + xrpTxt + "' WHERE id_billetera = '001';";
+                    query = "UPDATE billetera SET xrp = xrp + '" + xrpTxt + "' WHERE id_billetera = '" +idClient +"';";
                     comand = new SqlCommand(query, connectionDB);
                     // comand.Parameters.AddWithValue("@xrp", xrpTxt);
                     comand.ExecuteNonQuery();
@@ -77,7 +81,7 @@ namespace Cajero
                     Console.Write("Insert etherium mount: ");
                     etherium = Console.ReadLine();
 
-                    query = "UPDATE billetera SET etherium = etherium + '" + etherium + "' WHERE id_billetera = '001';";
+                    query = "UPDATE billetera SET etherium = etherium + '" + etherium + "' WHERE id_billetera = '"+ idClient +"';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
                     connectionDB.Close();
@@ -89,7 +93,7 @@ namespace Cajero
                     Console.Write("Insert bitcoin mount: ");
                     bitcoin = Console.ReadLine();
 
-                    query = "UPDATE billetera SET bitcoin = bitcoin + '" + bitcoin + "' WHERE id_billetera = '001';";
+                    query = "UPDATE billetera SET bitcoin = bitcoin + '" + bitcoin + "' WHERE id_billetera = '"+ idClient +"';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
                     connectionDB.Close();
@@ -101,7 +105,7 @@ namespace Cajero
                     Console.Write("Insert dollars mount: ");
                     dollars = Console.ReadLine();
 
-                    query = "UPDATE billetera SET dollars = dollars + '" + dollars + "' WHERE id_billetera = '001';";
+                    query = "UPDATE billetera SET dollars = dollars + '" + dollars + "' WHERE id_billetera = '"+ idClient +"';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
                     connectionDB.Close();
@@ -109,7 +113,7 @@ namespace Cajero
             }
         }
 
-        static void Transfer()
+        static void Transfer(int idClient)
         {
             SqlConnection connectionDB = new SqlConnection("SERVER=CLIENTE\\SQLEXPRESS; DATABASE=criptos; integrated security=true");
             SqlCommand comand = new SqlCommand();
@@ -138,7 +142,7 @@ namespace Cajero
                     Console.Write("Insert xrp mount: ");
                     xrpTxt = Console.ReadLine();
 
-                    query = "UPDATE billetera SET xrp = xrp - '" + xrpTxt + "' WHERE id_billetera = '001';\n" +
+                    query = "UPDATE billetera SET xrp = xrp - '" + xrpTxt + "' WHERE id_billetera = '"+ idClient +"';\n" +
                     "UPDATE billetera SET xrp = xrp + '" + xrpTxt + "' WHERE id_billetera = '" + idReceptor + "';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
@@ -151,7 +155,7 @@ namespace Cajero
                     Console.Write("Insert etherium mount: ");
                     etherium = Console.ReadLine();
 
-                    query = "UPDATE billetera SET etherium = etherium - '" + etherium + "' WHERE id_billetera = '001';\n" +
+                    query = "UPDATE billetera SET etherium = etherium - '" + etherium + "' WHERE id_billetera = '"+ idClient +"';\n" +
                     "UPDATE billetera SET xrp = xrp + '" + etherium + "' WHERE id_billetera = '" + idReceptor + "';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
@@ -164,7 +168,7 @@ namespace Cajero
                     Console.Write("Insert bitcoin mount: ");
                     bitcoin = Console.ReadLine();
 
-                    query = "UPDATE billetera SET bitcoin = bitcoin - '" + bitcoin + "' WHERE id_billetera = '001';\n" +
+                    query = "UPDATE billetera SET bitcoin = bitcoin - '" + bitcoin + "' WHERE id_billetera = '"+ idClient +"';\n" +
                     "UPDATE billetera SET xrp = xrp + '" + bitcoin + "' WHERE id_billetera = '" + idReceptor + "';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
@@ -177,7 +181,7 @@ namespace Cajero
                     Console.Write("Insert dollars mount: ");
                     dollars = Console.ReadLine();
 
-                    query = "UPDATE billetera SET dollars = dollars - '" + dollars + "' WHERE id_billetera = '001';\n" +
+                    query = "UPDATE billetera SET dollars = dollars - '" + dollars + "' WHERE id_billetera = '"+ idClient +"';\n" +
                     "UPDATE billetera SET xrp = xrp + '" + dollars + "' WHERE id_billetera = '" + idReceptor + "';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
@@ -186,7 +190,7 @@ namespace Cajero
             }
         }
 
-        static void Whithdraw()
+        static void Whithdraw(int idClient)
         {
             SqlConnection connectionDB = new SqlConnection("SERVER=CLIENTE\\SQLEXPRESS; DATABASE=criptos; integrated security=true");
             SqlCommand comand = new SqlCommand();
@@ -210,7 +214,7 @@ namespace Cajero
                     Console.Write("Insert xrp mount: ");
                     xrpTxt = Console.ReadLine();
 
-                    query = "UPDATE billetera SET xrp = xrp - '" + xrpTxt + "' WHERE id_billetera = '001';";
+                    query = "UPDATE billetera SET xrp = xrp - '" + xrpTxt + "' WHERE id_billetera = '"+ idClient +"';";
                     comand = new SqlCommand(query, connectionDB);
                     // comand.Parameters.AddWithValue("@xrp", xrpTxt);
                     comand.ExecuteNonQuery();
@@ -223,7 +227,7 @@ namespace Cajero
                     Console.Write("Insert etherium mount: ");
                     etherium = Console.ReadLine();
 
-                    query = "UPDATE billetera SET etherium = etherium - '" + etherium + "' WHERE id_billetera = '001';";
+                    query = "UPDATE billetera SET etherium = etherium - '" + etherium + "' WHERE id_billetera = '"+ idClient +"';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
                     connectionDB.Close();
@@ -235,7 +239,7 @@ namespace Cajero
                     Console.Write("Insert bitcoin mount: ");
                     bitcoin = Console.ReadLine();
 
-                    query = "UPDATE billetera SET bitcoin = bitcoin - '" + bitcoin + "' WHERE id_billetera = '001';";
+                    query = "UPDATE billetera SET bitcoin = bitcoin - '" + bitcoin + "' WHERE id_billetera = '"+ idClient +"';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
                     connectionDB.Close();
@@ -247,7 +251,7 @@ namespace Cajero
                     Console.Write("Insert dollars mount: ");
                     dollars = Console.ReadLine();
 
-                    query = "UPDATE billetera SET dollars = dollars - '" + dollars + "' WHERE id_billetera = '001';";
+                    query = "UPDATE billetera SET dollars = dollars - '" + dollars + "' WHERE id_billetera = '"+ idClient +"';";
                     comand = new SqlCommand(query, connectionDB);
                     comand.ExecuteNonQuery();
                     connectionDB.Close();
