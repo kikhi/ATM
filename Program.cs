@@ -4,12 +4,18 @@ using System.Linq;
 using System.Data.SqlClient;
 
 /*    Class for database conection    */
-class ModelDB
+class ControllerDB
 {
     private SqlConnection connectionDB = new SqlConnection("SERVER=CLIENTE\\SQLEXPRESS; DATABASE=criptos; integrated security=true");
     private SqlCommand comand = new SqlCommand();
-    public string? query { get; set; }
-    public int? menu { get; set; }
+    private string? query;
+    private int? menu;
+    public int? Menu {get { return menu; }set { menu = value; }}
+    public string? xrp { get; set; }
+    public string? etherium { get; set; }
+    public string? bitcoin { get; set; }
+    public string? dollars { get; set; }
+
 
     public void openConection()
     {
@@ -21,10 +27,12 @@ class ModelDB
         this.connectionDB.Close();
     }
 
-    public void commandDB()
+    public void commandDB(string query)
     {
+        this.query = query;
         this.comand = new SqlCommand(this.query, this.connectionDB);
         this.comand.ExecuteNonQuery();
+        // comand.Parameters.AddWithValue("@xrp", xrpTxt);
     }
 }
 
@@ -36,12 +44,12 @@ namespace Cajero
         {
             int idClient;
 
-            Console.Write("Insert ID from receptor: ");
+            Console.Write("Insert your client ID: ");
             idClient = Convert.ToInt32(Console.ReadLine());
 
             /*    ==== Menu ====    */
             Console.WriteLine("Criptos ATM\n");
-            Console.WriteLine("1.- Depositar");
+            Console.WriteLine("1.- Deposit");
             Console.WriteLine("2.- Withdraw");
             Console.WriteLine("3.- Transfer");
             Console.WriteLine("4.- Salir");
@@ -51,7 +59,7 @@ namespace Cajero
             switch (menu)
             {
                 case 1:
-                    Depositar(idClient);
+                    Deposit(idClient);
                     break;
                 case 2:
                     Whithdraw(idClient);
@@ -69,66 +77,45 @@ namespace Cajero
             Console.ReadKey();
         }
 
-        static void Depositar(int idClient)
+        static void Deposit(int idClient)
         {
-            ModelDB Model = new ModelDB();   
+            ControllerDB Model = new ControllerDB();   
 
             Console.Clear();
-            Console.WriteLine("Que moneda desea depositar?");
+            Console.WriteLine("Que moneda desea Deposit?");
             Console.WriteLine("1.- xrp");
             Console.WriteLine("2.- etherium");
             Console.WriteLine("3.- bitcoin");
             Console.WriteLine("4.- Dollars");
-            Model.menu = Convert.ToInt32(Console.ReadLine());
-            switch (Model.menu)
+            Model.Menu = Convert.ToInt32(Console.ReadLine());
+            switch (Model.Menu)
             {
                 case 1:    // XRP
-                    //Model.connectionDB.Open();
                     Model.openConection();
-                    string? xrpTxt = null;
-
                     Console.Write("Insert xrp mount: ");
-                    xrpTxt = Console.ReadLine();
-
-                    Model.query = "UPDATE billetera SET xrp = xrp + '" + xrpTxt + "' WHERE id_billetera = '" +idClient +"';";
-                    //    Model.comand = new SqlCommand(Model.query, Model.connectionDB);
-                    // comand.Parameters.AddWithValue("@xrp", xrpTxt);
-                    //    Model.comand.ExecuteNonQuery();
-                    Model.commandDB();
-                    //Model.connectionDB.Close();
+                    Model.xrp = Console.ReadLine();
+                    Model.commandDB("UPDATE billetera SET xrp = xrp + '" + Model.xrp + "' WHERE id_billetera = '" + Model.xrp +"';");
                     Model.closeConection();
                     break;
                 case 2:    // ETHERIUM
                     Model.openConection();
-                    string? etherium = null;
-
                     Console.Write("Insert etherium mount: ");
-                    etherium = Console.ReadLine();
-
-                    Model.query = "UPDATE billetera SET etherium = etherium + '" + etherium + "' WHERE id_billetera = '"+ idClient +"';";
-                    Model.commandDB();
+                    Model.etherium = Console.ReadLine();
+                    Model.commandDB("UPDATE billetera SET etherium = etherium + '" + Model.etherium + "' WHERE id_billetera = '"+ idClient +"';");
                     Model.closeConection();
                     break;
                 case 3:    // BITCOIN
                     Model.openConection();
-                    string? bitcoin = null;
-
                     Console.Write("Insert bitcoin mount: ");
-                    bitcoin = Console.ReadLine();
-
-                    Model.query = "UPDATE billetera SET bitcoin = bitcoin + '" + bitcoin + "' WHERE id_billetera = '"+ idClient +"';";
-                    Model.commandDB();
+                    Model.bitcoin = Console.ReadLine();
+                    Model.commandDB("UPDATE billetera SET bitcoin = bitcoin + '" + Model.bitcoin + "' WHERE id_billetera = '"+ idClient +"';");
                     Model.closeConection();
                     break;
                 case 4:    // DOLLARS
                     Model.openConection();
-                    string? dollars = null;
-
                     Console.Write("Insert dollars mount: ");
-                    dollars = Console.ReadLine();
-
-                    Model.query = "UPDATE billetera SET dollars = dollars + '" + dollars + "' WHERE id_billetera = '"+ idClient +"';";
-                    Model.commandDB();
+                    Model.dollars = Console.ReadLine();
+                    Model.commandDB("UPDATE billetera SET dollars = dollars + '" + Model.dollars + "' WHERE id_billetera = '"+ idClient +"';");
                     Model.closeConection();
                     break;
             }
