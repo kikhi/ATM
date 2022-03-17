@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\Cajero.csproj": {}
+    "C:\\Users\\catg_\\Desktop\\Git\\ATM\\Cajero.csproj": {}
   },
   "projects": {
-    "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\Cajero.csproj": {
+    "C:\\Users\\catg_\\Desktop\\Git\\ATM\\Cajero.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\Cajero.csproj",
+        "projectUniqueName": "C:\\Users\\catg_\\Desktop\\Git\\ATM\\Cajero.csproj",
         "projectName": "Cajero",
-        "projectPath": "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\Cajero.csproj",
+        "projectPath": "C:\\Users\\catg_\\Desktop\\Git\\ATM\\Cajero.csproj",
         "packagesPath": "C:\\Users\\catg_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\catg_\\Desktop\\Git\\Cajero\\obj\\",
+        "outputPath": "C:\\Users\\catg_\\Desktop\\Git\\ATM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\catg_\\AppData\\Roaming\\NuGet\\NuGet.Config"
