@@ -37,3 +37,6 @@ You can also ejecute and test the code whit the comand
   - VS code
   - SQL server
   - git
+
+### Version
+Git used for control and make versions of the project.
