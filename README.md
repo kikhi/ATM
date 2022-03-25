@@ -39,4 +39,4 @@ _You can also ejecute and test the code whit the comand_
   - git
 
 ### Version
-_(Git)[https://git-scm.com/downloads] used for control and make versions of the project._
+_[Git](https://git-scm.com/downloads) used for control and make versions of the project._
