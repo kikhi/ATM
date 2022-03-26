@@ -21,6 +21,11 @@ _Sql server conection_
 dotnet add package System.Data.SqlClient --version 4.8.3
 ```
 
+_Unit Testings_
+```
+dotnet add package Microsoft.VisualStudio.UnitTesting --version 11.0.50727.1
+```
+
 ### Instalation 🔧
 
 _You can download the project and use the program with .exe or modify the source code for upgrade it_

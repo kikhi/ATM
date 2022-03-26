@@ -1,0 +1,6 @@
+C:\Users\catg_\Desktop\Git\ATM\AtmTestings\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\catg_\Desktop\Git\ATM\AtmTestings\obj\Debug\net6.0\AtmTestings.csproj.AssemblyReference.cache
+C:\Users\catg_\Desktop\Git\ATM\AtmTestings\obj\Debug\net6.0\AtmTestings.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\catg_\Desktop\Git\ATM\AtmTestings\obj\Debug\net6.0\AtmTestings.AssemblyInfoInputs.cache
+C:\Users\catg_\Desktop\Git\ATM\AtmTestings\obj\Debug\net6.0\AtmTestings.AssemblyInfo.cs
+C:\Users\catg_\Desktop\Git\ATM\AtmTestings\obj\Debug\net6.0\AtmTestings.csproj.CoreCompileInputs.cache

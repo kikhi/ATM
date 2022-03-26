@@ -99,7 +99,7 @@ namespace Cajero
             Console.ReadKey();
         }
 
-        static string Deposit(int idClient)
+        public static string Deposit(int idClient)
         {
             ControllerDB controller = new ControllerDB();   
 
