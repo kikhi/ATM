@@ -11,6 +11,7 @@ _The project is already build for the product use but remember the defaul values
 ### Pre-requisites and builded with 📋 🛠️
 
 * [.net 6](https://dotnet.microsoft.com/en-us/download) - dotnet 6.0.1
+* [SQL server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads) - For database development
 * [git](https://git-scm.com/) - For branching
 * [vs code](https://code.visualstudio.com/) - For code edit
 
