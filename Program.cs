@@ -61,6 +61,7 @@ namespace Cajero
         public static void Main(string[] args)
         {
             int idClient;
+            string? result = null;
 
             Console.Write("Insert your client ID: ");
             idClient = Convert.ToInt32(Console.ReadLine());
@@ -77,13 +78,16 @@ namespace Cajero
             switch (menu)
             {
                 case 1:
-                    Deposit(idClient);
+                    result = Deposit(idClient);
+                    Console.WriteLine(result);
                     break;
                 case 2:
-                    Whithdraw(idClient);
+                    result = Whithdraw(idClient);
+                    Console.WriteLine(result);
                     break;
                 case 3:
-                    Transfer(idClient);
+                    result = Transfer(idClient);
+                    Console.WriteLine(result);
                     break;
                 case 4:
                     Environment.Exit(0);
@@ -95,7 +99,7 @@ namespace Cajero
             Console.ReadKey();
         }
 
-        static void Deposit(int idClient)
+        static string Deposit(int idClient)
         {
             ControllerDB controller = new ControllerDB();   
 
@@ -138,9 +142,10 @@ namespace Cajero
                     controller.closeConection();
                     break;
             }
+            return "Deposit completed";
         }
 
-        static void Transfer(int idClient)
+        static string Transfer(int idClient)
         {
             ControllerDB controller = new ControllerDB();  
             Clients Client = new Clients();
@@ -192,9 +197,10 @@ namespace Cajero
                     controller.closeConection();
                     break;
             }
+            return "Transfer completed";
         }
 
-        static void Whithdraw(int idClient)
+        static string Whithdraw(int idClient)
         {
             ControllerDB controller = new ControllerDB();
             int menu;
@@ -238,6 +244,7 @@ namespace Cajero
                     controller.closeConection();
                     break;
             }
+            return "Whithdraw completed";
         }
 
     }
