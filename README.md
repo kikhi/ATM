@@ -1,42 +1,81 @@
-# ATM project
-ATM for basic transactions
+# ATM
 
-### Get Started
-_For get this project you can make a git clone from the cmd whit git or download it on zip._
-_Once downloaded you can modify the code or deploy it._
+_Simple ATM, cross plataform_
 
-The project is already build for the product use but remember the defaul values of the database is SERVER=CLIENTE\\SQLEXPRESS; DATABASE=criptos; integrated security=true
+## Get Started 🚀
 
+_CRUD instructions for traning or upgrade to a serious project_
 
-### Pre-Requisites
-  - C# 
-  - .net 6
-  - SQL server
-  - POO
+_The project is already build for the product use but remember the defaul values of the database is SERVER=CLIENTE\SQLEXPRESS; DATABASE=criptos; integrated security=true_
 
+### Pre-requisites and builded with 📋 🛠️
 
-### Instalation
-_First use the command _
+* [.net 6](https://dotnet.microsoft.com/en-us/download) - dotnet 6.0.1
+* [git](https://git-scm.com/) - For branching
+* [vs code](https://code.visualstudio.com/) - For code edit
+
+_Sql server conection_
 
 ```
-    git clone https://github.com/kikhi/ATM.git
+dotnet add package System.Data.SqlClient --version 4.8.3
 ```
 
-_Then you can put the project on a IDE for modificate it_
+### Instalation 🔧
 
-### Ejecution and testing
-_Al CRUD actions are instanced in functions for test whit a xunit._
+_You can download the project and use the program with .exe or modify the source code for upgrade it_
 
-_You can also ejecute and test the code whit the comand_
+_Once downloaded on bin file you can find the .exe program_
+
 ```
-    dotnet run
+C: \ATM> cd bin 
 ```
 
-### Built whit
-  - .net 6
-  - VS code
-  - SQL server
-  - git
+_You can also upgrade the project cloning the repository or download in a zip_
+```
+git clone https://github.com/kikhi/ATM.git
+```
 
-### Version
-_[Git](https://git-scm.com/downloads) used for control and make versions of the project._
+### Run and Unit Testing ⌨️
+
+_For run project use the fallow command_
+```
+dotnet run
+```
+
+_xUnit used for this project_
+```
+dotnet new xunit -o AlgebraTests
+```
+
+_Add reference from project to testing project_
+```
+dotnet add AlgebraTests/AlgebraTests.csproj reference Algebra.csproj
+```
+
+_For test code use fallow command_
+```
+dotnet test AlgebraTests/AlgebraTests.csproj
+```
+
+_If the second time testing there are problems, put the follow instruction on files .csproj from project and test project_
+```
+<GenerateAssemblyInfo> false </GenerateAssemblyInfo>
+```
+
+## Deploy 📦
+
+_For deployment need build the project_
+
+```
+dotnet build
+```
+
+_Then you can publish the project or take the .exe for personal use_
+
+## Licence 📄
+
+This project is for free use - See the licence [LICENSE.md](LICENSE.md) for more details
+
+
+---
+Made by [kikhi](https://github.com/kikhi) 😊
